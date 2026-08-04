@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Category Checker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Age Category Checker</h2>
+
+        <label style="font-size: 17px;">Enter Your Age:</label><br><br>
+
+        <input type="number" id="age" placeholder="Enter your age">
+        <br><br><br>
+
+        <button onclick="checkAge()">Check Category</button>
+
+        <h3 id="result"></h3>
+    </div>
+
+    <script>
+        function checkAge() {
+
+            let age = Number(document.getElementById("age").value);
+            let result = document.getElementById("result");
+
+            if (age === 0) {
+                result.innerHTML = "Child";
+            }
+            else if (age > 0 && age <= 12) {
+                result.innerHTML = "Child";
+            }
+            else if (age >= 13 && age <= 19) {
+                result.innerHTML = "Teenager";
+            }
+            else if (age >= 20 && age <= 59) {
+                result.innerHTML = "Adult";
+            }
+            else if (age >= 60) {
+                result.innerHTML = "Senior Citizen";
+            }
+            else {
+                result.innerHTML = "Please enter a valid age.";
+            }
+
+        }
+    </script>
+
+</body>
+</html>
